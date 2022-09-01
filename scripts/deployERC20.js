@@ -2,10 +2,10 @@ const hre = require("hardhat");
 
 async function main() {
     const [deployer] = await hre.ethers.getSigners();
-    const TimeLockContract = await hre.ethers.getContractFactory("TimeLock")
-    const timeLock = await TimeLockContract.deploy()
-    await timeLock.deployed()
-    console.log(timeLock.address)
+    const tokenERC20Contract = await hre.ethers.getContractFactory("Token1")
+    const tokenERC20 = await tokenERC20Contract.deploy(1000)
+    await tokenERC20.deployed()
+    console.log(tokenERC20.address)
   }
   
   
